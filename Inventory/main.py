@@ -18,3 +18,5 @@ if __name__ == "__main__":
 
     inventory.display_inventory()
 
+    inventory.load_products_from_csv('products.csv')
+    inventory.display_inventory()

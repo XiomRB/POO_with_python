@@ -1,0 +1,11 @@
+type,product,price,quantity,warranty_months,size
+electronic,Laptop,950,5,24,
+electronic,Headphones,120,15,12,
+clothing,Shoes,75,20,,42
+electronic,Smartphone,650,10,18,
+clothing,T-Shirt,20,50,,M
+electronic,Refrigerator,1200,3,36,
+clothing,Jeans,45,30,,L
+electronic,Smartwatch,250,8,12,
+clothing,Backpack,60,25,,XL
+electronic,Microwave,180,6,24,

@@ -1,3 +1,6 @@
+import csv
+from product import *
+
 class Inventory:
     def __init__(self):
         self.products = {}
@@ -34,3 +37,27 @@ class Inventory:
             return
         for prod in self.products.values():
             print(prod)
+    
+    def load_products_from_csv(self,file_name):
+        try:
+            with open(file_name,newline='',encoding='utf-8') as file:
+                reader = csv.DictReader(file)
+                for row in reader:
+                    product_type = row['type'].lower()
+                    name = row['product']
+                    price = float(row['price'])
+                    quantity = int(row['quantity'])
+                    if product_type == 'electronic':
+                        warranty_months = row.get('warranty_months',0)
+                        product = Electronic(name, price, quantity,warranty_months)
+                    elif product_type == 'size':
+                        size = row.get('size','U')
+                        product = Clothing(name,price,quantity,size)
+                    else:
+                        product = Product(name,price,quantity)
+                    
+                    self.add_product(product)
+        except FileNotFoundError:
+            print(f"El archivo {file_name} no existe")
+        except Exception as e:
+            print(f'Hubo un error al abrir el archivo: {e}')
