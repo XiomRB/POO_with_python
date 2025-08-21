@@ -32,6 +32,6 @@ python -m pip freeze > nombre_archivo.txt    (en un entorno)
 
 ```
 pip install -r requeriments.txt    (desde un archivo)
-pip install dependencia=version   (=version) se utiliza solo si se desea instalar una version especifica ej. flask=4.1
-python -m pip install dependencia=version  (dentro de un entorno)
+pip install dependencia==version   (==version) se utiliza solo si se desea instalar una version especifica ej. flask==4.1
+python -m pip install dependencia==version  (dentro de un entorno)
 ```
